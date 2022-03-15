@@ -4,6 +4,7 @@ import Comics from "./Comics"
 import { addComicsThunk } from "../../redux/comicslist-reducer"
 import { useEffect } from "react"
 import Error from '../comon/error/Error'
+import { useNavigate } from "react-router-dom"
 
 const ComicsContainer = ({comicsList = [], offset = 0, addComicsThunk = function(){}, error = false, isLoading = true}) => {
     useEffect(() => {
@@ -12,9 +13,26 @@ const ComicsContainer = ({comicsList = [], offset = 0, addComicsThunk = function
         }
     }, [])
 
+    const navigate = useNavigate()
+
+    const openComics = (e) => {
+        navigate(`${e.currentTarget.getAttribute('data-id')}`)
+    }
+
+    const addComics = () => {
+        addComicsThunk(offset)
+    }
+
     if (error) return <Error/>
 
-    return <Comics comicsList = {comicsList} addComicsThunk = {addComicsThunk} offset = {offset} isLoading = {isLoading}/>
+    return <Comics 
+        comicsList = {comicsList} 
+        addComicsThunk = {addComicsThunk} 
+        offset = {offset} 
+        isLoading = {isLoading}
+        openComics = {openComics}
+        addComics = {addComics}
+    />
 }
 
 const mapStateToProps = (state) => {

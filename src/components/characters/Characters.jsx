@@ -1,12 +1,9 @@
 import CharacterCard from './characterCard/CharacterCard'
-import Find from './Find'
 import RandomCharacterContainer from './randomCharacters/RandomCharacterContainer'
 import CharacterListContainer from './characterList/CharacterListContainer'
+import FindContainer from './find/FindContainer'
 
 import './characters.scss'
-import FindContainer from './FindContainer'
-
-
 
 const Characters = ({characterInf, changeCharacterThunk, isLoading = true, error = false}) => { 
     

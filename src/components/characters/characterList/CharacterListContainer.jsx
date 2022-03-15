@@ -4,15 +4,35 @@ import { addCharacterThunk } from "../../../redux/characterlist-reducer"
 import { compose } from "redux"
 import { useEffect } from "react"
 
-const CharacterListContainer = ({addCharacterThunk = function(){}, offset = 0, characterList = [], ...props}) => {
+const CharacterListContainer = ({
+    addCharacterThunk = function(){}, 
+    offset = 0, 
+    characterList = [], 
+    changeCharacterThunk = function(){},
+    ...props
+}) => {
     useEffect(()=> {
         if (characterList.length <= 0) {
             addCharacterThunk(offset)
         }
     }, [])
 
+    const addPage = () => {
+        addCharacterThunk(offset)
+    }
+
+    const setCharacter = (e) => {
+        changeCharacterThunk(e.currentTarget.getAttribute('data-id'))
+    }
+
     return (
-        <CharacterList addCharacterThunk = {addCharacterThunk} offset = {offset} characterList = {characterList} {...props}/>
+        <CharacterList 
+            setCharacter = {setCharacter} 
+            addPage = {addPage} 
+            offset = {offset} 
+            characterList = {characterList} 
+            {...props}
+        />
     )
 }
 

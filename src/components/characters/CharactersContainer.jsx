@@ -3,7 +3,6 @@ import { compose } from "redux"
 import Characters from "./Characters"
 
 import { changeCharacterThunk } from "../../redux/characterabout-reducer"
-import { useEffect } from "react"
 
 const CharactersContainer = (props) => {
 

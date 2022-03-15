@@ -39,7 +39,7 @@ export const setchar = (charList) => {
     }
 }
 
-const setError = (error) => {
+export const setError = (error) => {
     return {
         type: "find-reducer/SET_ERROR",
         error

@@ -1,39 +1,33 @@
-import { useNavigate } from 'react-router-dom'
-
 import Button from '../comon/button/Button'
 import Banner from '../comon/banner/Banner'
 import Loader from '../comon/loader/Loader'
 
-
 import './comics.scss'
 
+export default function Comics ({
+    comicsList = [],
+    isLoading = true, 
+    openComics = function(){},
+    addComics = function(){}
+}) {
 
-export default function Comics ({comicsList = [], offset = 0, addComicsThunk = function(){}, isLoading = true}) {
-    const navigate = useNavigate()
-
-    const addComics = () => {
-        addComicsThunk(offset)
-    }
+    const list = (
+        comicsList.map((item, index) => {
+            return (
+                <div data-id = {item.id} onClick={openComics} key={index} className="comics__list__unit">
+                    <img src={item.thumbnail} alt="Comics" />
+                    <p className='comics__list__unit__name'>{item.name}</p>
+                    <p className='comics__list__unit__price'>9.99$</p>
+                </div>
+            )
+        })
+    )
 
     return (
         <div className="comics">
             <Banner/>
             <div className="comics__list">
-                {
-                    comicsList.map((item, index) => {
-                        const openComics = () => {
-                            navigate(`${item.id}`)
-                        }
-
-                        return (
-                            <div onClick={openComics} key={index} className="comics__list__unit">
-                                <img src={item.thumbnail} alt="Comics" />
-                                <p className='comics__list__unit__name'>{item.name}</p>
-                                <p className='comics__list__unit__price'>9.99$</p>
-                            </div>
-                        )
-                    })
-                }
+                {list}
             </div>
             {
                 isLoading
