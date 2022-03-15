@@ -1,0 +1,38 @@
+.banner {
+    height: 100px;
+    background-color: var(--color-dg);
+    margin-bottom: 50px;
+    position: relative;
+
+    &__left {
+        position: absolute;
+        left: 45px;
+        top: 0;
+    }
+
+    &__text {
+        font-family: var(--font);
+        font-weight: bold;
+        font-size: 24px;
+        color: white;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        span {
+            margin-left: 30%;
+        }
+    }
+
+    &__right {
+        position: absolute;
+        right: 25px;
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .banner {
+        display: none;
+    }
+    
+}

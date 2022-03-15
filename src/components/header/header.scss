@@ -1,0 +1,59 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 37px;
+    margin: 50px 0 50px 0;
+
+    .siteName {
+        font-family: var(--font);
+        margin: 0;
+        font-size: 28px;
+        span {
+            color: var(--color-r);
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    
+    .menu {
+        ul{
+            margin: 0;
+            padding: 0;
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: 24px;
+
+            li{
+                display: inline-block;
+                margin: 0;
+            }
+            .dash {
+                margin: 0 8px 0 8px;
+            }
+            
+            .route{
+                color: black;
+                text-decoration: none;
+            }
+            .active {
+                color: var(--color-r);
+            }
+        }    
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        .siteName {
+            font-size: 21px;
+        }
+        
+        .menu {
+            ul{
+                font-size: 18px;
+            }
+        }
+    }
+}

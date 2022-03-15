@@ -1,0 +1,64 @@
+.skeleton {
+    width: 425px / 1100px * 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    box-sizing: border-box;
+
+    p {
+        width: 100%;
+        text-align: center;
+        font-family: var(--font);
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0px;
+        margin-bottom: 30px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 15px;
+
+        &__avatar{
+            width: 45px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 9px;
+            background-color: var(--color-g);
+        }
+        
+        &__right {
+            width: 100%;
+            height: 16px;
+            background-color: var(--color-g);
+        }
+    }
+
+    &__text {
+        width: 100%;
+        height: 35px;
+        background-color: var(--color-g);
+    }
+
+    &__header, &__text {
+        animation-name: flash-skeleton;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes flash-skeleton {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: .3;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+button {
+    padding: 11px 18px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    min-width: 101px;
+}
+
+a.red, a.gray {
+    padding: 11px 18px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    min-width: 101px;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.red {
+    background: linear-gradient(135deg, transparent 10px, #9F0013 10px, #9F0013 80%, transparent 80%),
+                linear-gradient(-45deg, transparent 10px, #9F0013 10px, #9F0013 80%, transparent 80%);
+
+    &:hover {
+        background: linear-gradient(135deg, transparent 10px, #61000b 10px, #61000b 80%, transparent 80%),
+                    linear-gradient(-45deg, transparent 10px, #61000b 10px, #61000b 80%, transparent 80%);
+    }
+}
+
+.gray {
+    background: linear-gradient(135deg, transparent 10px, #5C5C5C 10px, #5C5C5C 80%, transparent 80%),
+                linear-gradient(-45deg, transparent 10px, #5C5C5C 10px, #5C5C5C 80%, transparent 80%);
+
+    &:hover {
+        background: linear-gradient(135deg, transparent 10px, #3d3d3d 10px, #3d3d3d 80%, transparent 80%),
+                    linear-gradient(-45deg, transparent 10px, #3d3d3d 10px, #3d3d3d 80%, transparent 80%);
+    }
+}
+
+.disabled {
+    cursor: default;
+    background: linear-gradient(135deg, transparent 10px, #7e7e7e 10px, #7e7e7e 80%, transparent 80%),
+                linear-gradient(-45deg, transparent 10px, #7e7e7e 10px, #7e7e7e 80%, transparent 80%);
+}

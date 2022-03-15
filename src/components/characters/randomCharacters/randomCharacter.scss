@@ -1,0 +1,117 @@
+.random {
+    width: 100%;
+    margin-bottom: 50px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+        width: 50%;
+        height: 250px;
+        padding: 35px 35px 35px 40px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        
+        img {
+            display: inline-block;
+            margin-right: 30px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        &__notfound {
+            object-fit: contain;
+        }
+
+        &__about {
+            width: 265px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &__name {
+                font-family: var(--font);
+                font-weight: 700;
+                margin: 0px 0 10px 0;
+            }
+
+            &__description {
+                font-family: var(--font);
+                font-weight: 400;
+                font-size: 14px;
+                margin: 0 0 13px 0;
+            }
+
+            &__buttons button {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    &__right {
+        width: 50%;
+        height: 250px;
+        background-color: var(--color-dg);
+        padding: 35px 35px 35px 40px;
+        box-sizing: border-box;
+        position: relative;
+
+        img {
+            position: absolute;
+            right: -50px;
+            bottom: 0;
+        }
+        
+        &__text p{
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: 24px;
+            color: white;
+            margin: 0;
+
+            &:last-child {
+                margin-top: 33px;
+                margin-bottom: 13px;
+            }
+        }       
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .random {
+        flex-direction: column; 
+        &__right {
+            width: 100%;
+
+        }
+        &__left {
+            p {
+                display: none;
+            }
+            button {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .random {
+        &__right {
+            width: 100%;
+
+        }
+        &__left {
+            p {
+                display: none;
+            }
+        }
+
+        &__right {
+            img {
+                display: none;
+            }
+        }
+    }
+}

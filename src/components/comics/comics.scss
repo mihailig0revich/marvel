@@ -1,0 +1,50 @@
+.comics {
+    
+    &__list {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(auto-fit, 225px);
+        
+
+        &__unit {
+            width: 225px;
+            margin-bottom: 55px;
+            img {
+                object-fit: contain;
+                width: 225px;
+                height: auto;
+            }
+
+            &__name {
+                font-family: var(--font);
+                font-weight: bold;
+                font-size: 14px;
+                margin: 10px 0 5px 0;
+            }
+
+            &__price {
+                font-family: var(--font);
+                font-weight: bold;
+                font-size: 14px;
+                color: rgba(0, 0, 0, 0.6);
+                margin: 0;
+            }
+        }
+    }
+
+    &__button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .comics{
+        &__list {
+            justify-content: center;
+        }
+    }
+}
